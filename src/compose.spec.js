@@ -13,4 +13,4 @@ describe('Parallel:', () => {
     expect(fn('3',1)).toBe(1081)
     expect(fn(3,-1)).toBe(-8)
   })
-}
+})
