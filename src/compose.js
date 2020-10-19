@@ -1,10 +1,15 @@
-const compose = (fns) =>{
-	
- return (...args) => {
-  let last = fns[fns.length-1](...args)
-  return fns.slice(0, fns.length-1).reduceRight((acc, fn) =>{
-  	return fn(acc)
-  	}, last) 
- }
+const compose = (arr) => {
+  const fns = [...arr]
+
+  return (...args) => {
+    return fns.reduceRight((acc, fn, idx) => {
+      if (idx === fns.length - 1) {
+        return fn(...args)
+      }
+
+      return fn(acc)
+    }, 0)
+  }
 }
+
 module.exports = compose

@@ -1,6 +1,9 @@
+/* eslint-disable */
+
 const compose = require('./compose.js')
 
-describe('Parallel:', () => {
+
+describe('Compose:', () => {
   test('Must be define', () => {
   	expect(compose).toBeDefined()
   })
@@ -36,5 +39,4 @@ describe('Parallel:', () => {
 
     expect(fn('3', 1)).toBe(1081)
   })
-  
 })
